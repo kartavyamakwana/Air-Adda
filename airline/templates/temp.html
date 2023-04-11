@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  
+  <style>
+    .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.flights {
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+select {
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-right: 10px;
+}
+
+.flight {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.flight-info {
+  flex-grow: 1;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-size: 18px;
+  color: #666;
+  margin: 0;
+}
+
+.flight-status {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #f00;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="flights">
+      <h2>Previous Flights</h2>
+      <form>
+        <label for="prev-from">From:</label>
+        <select id="prev-from">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+        <label for="prev-to">To:</label>
+        <select id="prev-to">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+      </form>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 123</h3>
+          <p>Los Angeles (LAX) to New York (JFK)</p>
+        </div>
+        <div class="flight-status">Delayed</div>
+      </div>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 456</h3>
+          <p>San Francisco (SFO) to Chicago (ORD)</p>
+        </div>
+        <div class="flight-status">On Time</div>
+      </div>
+    </div>
+    <div class="flights">
+      <h2>Upcoming Flights</h2>
+      <form>
+        <label for="upcoming-from">From:</label>
+        <select id="upcoming-from">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+        <label for="upcoming-to">To:</label>
+        <select id="upcoming-to">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+      </form>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 789</h3>
+          <p>Chicago (ORD) to Los Angeles (LAX)</p>
+        </div>
+        <div class="flight-status">On Time</div>
+      </div>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 101</h3>
+          <p>New York (JFK) to San Francisco (SFO)</p>
+        </div>
+        <div class="flight-status">Delayed</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="flights">
+      <h2>Previous Flights</h2>
+      <form>
+        <label for="prev-from">From:</label>
+        <select id="prev-from">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+        <label for="prev-to">To:</label>
+        <select id="prev-to">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+      </form>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 123</h3>
+          <p>Los Angeles (LAX) to New York (JFK)</p>
+        </div>
+        <div class="flight-status">Delayed</div>
+      </div>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 456</h3>
+          <p>San Francisco (SFO) to Chicago (ORD)</p>
+        </div>
+        <div class="flight-status">On Time</div>
+      </div>
+    </div>
+    <div class="flights">
+      <h2>Upcoming Flights</h2>
+      <form>
+        <label for="upcoming-from">From:</label>
+        <select id="upcoming-from">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+        <label for="upcoming-to">To:</label>
+        <select id="upcoming-to">
+          <option value="LAX">Los Angeles (LAX)</option>
+          <option value="SFO">San Francisco (SFO)</option>
+          <option value="JFK">New York (JFK)</option>
+          <option value="ORD">Chicago (ORD)</option>
+        </select>
+      </form>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 789</h3>
+          <p>Chicago (ORD) to Los Angeles (LAX)</p>
+        </div>
+        <div class="flight-status">On Time</div>
+      </div>
+      <div class="flight">
+        <div class="flight-info">
+          <h3>Flight 101</h3>
+          <p>New York (JFK) to San Francisco (SFO)</p>
+        </div>
+        <div class="flight-status">Delayed</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

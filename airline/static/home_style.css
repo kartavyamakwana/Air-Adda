@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #5c93a8;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+  }
+  .centered-div {
+    width: 50%; /* or whatever width you want */
+    margin: 0 auto; /* set left and right margin to auto */
+  }
+  .show {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .hide {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+    
+  header {
+    /* background-color: #FFFFFF; */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  #flash-container {
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+  }
+  
+  #flash-message {
+    position: relative;
+    margin: 0 auto;
+  }
+  
+  nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  nav li {
+    margin: 0 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  nav a:hover {
+    color: #0dfc00;
+    text-decoration: none;
+  }
+  
+  main {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .hero {
+    background-image: url("plane.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 80% 90%;
+    background-position: center;
+    height: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+  }
+  
+  .hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .hero p {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+  
+  .hero button {
+    background-color: #4CAF50;
+    color: #FFFFFF;
+    font-size: 18px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .hero button:hover {
+    background-color: #43A047;
+  }
+  
+  footer {
+    
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
