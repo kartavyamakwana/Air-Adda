@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm 
-from wtforms import StringField,PasswordField,SubmitField,BooleanField
+from wtforms import StringField,PasswordField,SubmitField,BooleanField, DateField, IntegerField
 from wtforms.validators import DataRequired,Length,Email,EqualTo,ValidationError
 from airline.models import User
 
@@ -30,3 +30,9 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
     
+class BookingForm(FlaskForm):
+    fromCity = StringField('From')
+    toCity = StringField('To')
+    departureDate = DateField('Departure')
+    adults = IntegerField('Adults')
+    children = IntegerField('Children')
