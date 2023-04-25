@@ -1,8 +1,11 @@
 from flask import get_flashed_messages, render_template,url_for,flash,redirect
-from airline.forms import RegistrationForm, LoginForm 
+from airline.forms import RegistrationForm, LoginForm, BookingForm
 from airline.models import User,Flight
 from airline import app, db, bcrypt
 from flask_login import login_user,current_user,logout_user
+
+import os 
+from flask import send_from_directory
 
 @app.route('/')
 @app.route('/home')
@@ -49,4 +52,23 @@ def signup():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('home'))
+    return redirect(url_for('home')) 
+
+@app.route('/favicon.ico') 
+def favicon(): 
+    return send_from_directory(os.path.join(app.root_path, 'static'), 'favicon.ico', mimetype='image/vnd.microsoft.icon')
+
+@app.route('/booking', methods=['GET','POST'])
+def booking():
+    form = BookingForm()
+    if form.validate_on_submit():
+        fromCity = form.fromCity.data
+        toCity = form.toCity.data
+        departureDate = form.departureDate.data
+        adults = form.adults.data
+        children = form.children.data
+        
+        flash('Here are the tickets found based on your search!', 'success')
+        return redirect(url_for('home'))
+
+    return render_template('booking.html', form=form,styles=['static/booking_style.css'])

@@ -24,3 +24,26 @@ class Flight(db.Model):
     take_off_time = db.Column(db.DateTime)
     landing_time = db.Column(db.DateTime)
     
+class Airport(db.Model):
+    airport_id = db.Column(db.String(20),primary_key=True)
+    airport_name = db.Column(db.String(20))
+    airport_type = db.Column(db.String(20))
+    capacity = db.Column(db.Integer)
+    no_of_terminals = db.Column(db.Integer)
+
+class Passenger(db.Model):
+    pid = db.Column(db.Integer,primary_key = True)
+    name = db.Column(db.String(20))
+    age = db.Column(db.Integer)
+    passport_id = db.Column(db.String(20))
+    ticket_id = db.Column(db.String(20),db.ForeignKey('ticket.id'))
+
+class Ticket(db.Model):
+    id = db.Column(db.String(20),primary_key=True)
+    flight_code = db.Column(db.String(20),db.ForeignKey('flight.id'))
+    total_amount = db.Column(db.Integer)
+    adult_pass = db.Column(db.Integer)
+    child_pass = db.Column(db.Integer,default=0)
+    seat_no = db.Column(db.Integer)
+    paid_via = db.Column(db.String(20))
+    transaction_id = db.Column(db.String(20))
