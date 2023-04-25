@@ -1,152 +1,61 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Book Now - Airline</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
-    .Search{
-      width: 20%;
-      align-content: center;
-    }
-    .passengerselection{
-      padding: 4px;
-    }
-    .passengerinner{
-        /* border : 4px solid antiquewhite; */
-      /* background-color: antiquewhite; */
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-    }
-    body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-#classofflight{
-  height: 40px;
-  width: 50%;
-}
-header {
-  background-color: #1E90FF;
-  color: #fff;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-}
-
-nav li {
-  margin-right: 20px;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-section {
-  margin: 50px auto;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #f5f5f5;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-}
-
-form {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 45%;
-}
-
-input[type="date"] {
-  width: 30%;
-}
-
-button {
-  background-color: #1E90FF;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0077B6;
-}
-form{
-  display: flex;
-  margin: 5px;
-  padding: 5px;
-  flex-direction: column;
-}
-footer {
-  background-color: #1E90FF;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
-}
-
-  </style>
-</head>
-<body>
-  
-<header>
-  <h2>Book Now</h2>
-</header>
+{% extends "layout.html" %}
+{% block content %}
   <section>
-    <form>
-      <label for="from">From:</label>
-      <input type="text" id="from" name="from" placeholder="Enter city or airport">
+    <form method = "POST" class="booking-form" action="">
+      {{ form.hidden_tag() }}
+      <div>
+        {{ form.fromCity.label() }}
+        {{ form.fromCity }}
+      </div>
+      <div>
+        {{ form.toCity.label() }}
+        {{ form.toCity }}
+      </div>
+      <div>
+        {{ form.departureDate.label() }}
+        {{ form.departureDate }}
+      </div>
+      <div>
+        {{ form.adults.label() }}
+        {{ form.adults }}
+      </div>
+      <div>
+        {{ form.children.label() }}
+        {{ form.children }}
+      </div>
+      <!-- <label for="from">From:</label>
+      <input type="text" id="from" name="from" placeholder="Enter city or airport"> -->
 
-      <label for="to">To:</label>
+      <!-- <label for="to">To:</label>
       <input type="text" id="to" name="to" placeholder="Enter city or airport">
 
       <label for="depart">Departure Date:</label>
       <input type="date" id="depart" name="depart">
 
       <div class="passengerselection">
-  <label  for="Passenger">Passenger:</label>
+      <label  for="Passenger">Passenger:</label>
       <div class="passengerinner">
          Adults: <input type="number" value="1"  name="Adult" min="1" max="5" default="1">
         Children: <input type="number" value="1"  name="Children" min="1" max="5" >
-        <hr>
         <label for="classofflight">Class of Flight</label>
         <select id="classofflight" name="selectclass">
           <option value="volvo">Buisness Class</option>
           <option value="saab">Economy Class</option>
         </select>
+      </div> -->
+      <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info") }}
       </div>
-      </div>
-      <button class="Search" type="submit">Search</button>
     </form>
   </section>
 
-  <footer>
-    <p>&copy; 2023 Airline. All rights reserved.</p>
-  </footer>
-</body>
-</html>
+  <div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div>{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+{% endblock %}
